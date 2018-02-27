@@ -1,4 +1,4 @@
-FROM golang:1.9
+FROM golang:1.10
 
 
 RUN echo 'Synchronizing References in apt-get...'
@@ -22,5 +22,6 @@ RUN go get -u github.com/golang/dep/...
 RUN go get -u github.com/goadesign/goa
 RUN go get -u github.com/goadesign/goa/goagen
 RUN cd $GOPATH/src/github.com/goadesign/goa && git checkout v1.2.0 && go install github.com/goadesign/goa/goagen
+RUN go get -u golang.org/x/lint/golint
 
 CMD /bin/sh

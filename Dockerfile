@@ -21,7 +21,7 @@ RUN go get -u github.com/mizoguche/migorate
 RUN go get -u github.com/golang/dep/...
 RUN go get -u github.com/goadesign/goa
 RUN go get -u github.com/goadesign/goa/goagen
-RUN cd $GOPATH/src/github.com/goadesign/goa && git checkout v1.2.0 && go install github.com/goadesign/goa/goagen
+RUN cd $GOPATH/src/github.com/goadesign/goa && git checkout v1.3.1 && go install github.com/goadesign/goa/goagen
 RUN go get -u golang.org/x/lint/golint
 
 CMD /bin/sh

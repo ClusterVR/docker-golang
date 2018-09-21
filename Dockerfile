@@ -11,6 +11,8 @@ RUN echo 'Grabbing AWS CLI...'
 RUN wget https://s3.amazonaws.com/aws-cli/awscli-bundle.zip
 RUN unzip awscli-bundle.zip
 
+RUN apt -y install jq
+
 RUN echo 'Installing AWS CLI...'
 RUN ./awscli-bundle/install -i /usr/local/aws -b /usr/local/bin/aws
 RUN rm -rf awscli-bundle*

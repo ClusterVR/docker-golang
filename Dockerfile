@@ -7,6 +7,9 @@ RUN apt-get update
 RUN echo 'Installing Unzip...'
 RUN apt-get install unzip -y
 
+RUN echo 'Installing mysql client'
+RUN apt-get -y install mysql-client
+
 RUN echo 'Grabbing AWS CLI...'
 RUN wget https://s3.amazonaws.com/aws-cli/awscli-bundle.zip
 RUN unzip awscli-bundle.zip
@@ -18,6 +21,8 @@ RUN ./awscli-bundle/install -i /usr/local/aws -b /usr/local/bin/aws
 RUN rm -rf awscli-bundle*
 
 # install tools
+RUN go get github.com/golang/mock/gomock
+RUN go install github.com/golang/mock/mockgen
 RUN go get github.com/ilkka/substenv
 RUN go get -u github.com/mizoguche/migorate
 RUN go get -u github.com/golang/dep/...

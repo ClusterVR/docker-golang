@@ -22,6 +22,7 @@ RUN rm -rf awscli-bundle*
 
 # install tools
 RUN go get github.com/golang/mock/gomock
+RUN cd $GOPATH/src/github.com/golang/mock/gomock && git checkout bcfe3c1f21d5271939479786888af1338fa1b25c && go get github.com/golang/mock/gomock/...
 RUN go install github.com/golang/mock/mockgen
 RUN go get github.com/ilkka/substenv
 RUN go get -u github.com/mizoguche/migorate
